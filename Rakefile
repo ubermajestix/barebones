@@ -15,6 +15,8 @@ end
 
 ensure_in_path 'lib'
 require 'barebones'
+rakefiles = Dir.glob File.join('tasks', '*.rake')
+import *rakefiles
 
 task :default => 'spec:run'
 
@@ -22,10 +24,10 @@ task :default => 'spec:run'
 PROJ.name = 'barebones'
 PROJ.authors = 'Tyler Montgomery'
 PROJ.email = 'tyler@is.stupidawesome.com'
-PROJ.url = 'http://...'
+PROJ.url = 'http://github.com/ubermajestix/barebones'
 PROJ.version = BareBones::VERSION
 PROJ.rubyforge.name = 'barebones'
 
 PROJ.spec.opts << '--color'
-
+PROJ.readme_file = "README.rdoc"
 # EOF
